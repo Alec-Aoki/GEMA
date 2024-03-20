@@ -7,12 +7,11 @@ int main (){
 
     while (num!=0){
         cin >> num;
-        if (num > maior_num){
+
+        if (num>maior_num){
             maior_num = num;
         }
-        else{
-            continue;
-        }
+        
     }
 
     cout << maior_num << endl;
