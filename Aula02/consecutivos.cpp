@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int quant_of_nums, points, temp_points;
+int quant_of_nums, points, temp_points, final_points;
 
 int main (){
 
@@ -22,11 +22,18 @@ int main (){
         else {
             temp_points = points;
             points = 1;
+                if (temp_points>final_points){
+                    final_points = temp_points;
+                }
         }
-
     }
 
-    cout << points << endl;
+    if (points>final_points){
+        cout << points << endl;
+    }
+    else {
+        cout << final_points << endl;
+    }
 
     return 0;
 }
