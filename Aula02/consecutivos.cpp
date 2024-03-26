@@ -1,11 +1,9 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int quant_of_nums, points, temp_points, final_points;
+int quant_of_nums, cont_main, cont_sup;
 
 int main (){
-
-    //TERMINAR
 
     cin >> quant_of_nums;
 
@@ -17,23 +15,24 @@ int main (){
         cin >> sequence[i];
 
         if (sequence[i]==sequence[i-1]){
-            points++;
+            cont_main++;
         }
-        else {
-            temp_points = points;
-            points = 1;
-                if (temp_points>final_points){
-                    final_points = temp_points;
-                }
+        else /*(sequence[i]!=sequence[i-1])*/ { 
+            if (cont_main>=cont_sup){
+                cont_sup = cont_main;
+            }
+            cont_main = 1;
         }
     }
 
-    if (points>final_points){
-        cout << points << endl;
+    if (cont_main>cont_sup){
+        cout << cont_main;
     }
     else {
-        cout << final_points << endl;
+        cout << cont_sup;
     }
 
+
     return 0;
+
 }
